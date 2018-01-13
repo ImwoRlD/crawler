@@ -3,14 +3,31 @@ package HttpRequest;
 import java.util.Map;
 
 public class RequestContext {
-    public String requestURL;
-    public String RequestMethod;
-    public String Charset;
-    public boolean isUpload;
-    public boolean isClear;
-    public Map<String,String> extraHeaders;
-    public Map<String,String> queryParam;
-    public Map<String,String> queryForm;
+    private String requestURL;
+    private String RequestMethod;
+    private String Charset;
+    private String proxyAddr;
+    private String proxyPort;
+    private boolean isUpload;
+    private boolean isClear;
+    private Map<String,String> extraHeaders;
+    private Map<String,String> queryParam;
+    private Map<String,String> queryForm;
+    public String getProxyAddr() {
+        return proxyAddr;
+    }
+
+    public void setProxyAddr(String proxyAddr) {
+        this.proxyAddr = proxyAddr;
+    }
+
+    public String getProxyPort() {
+        return proxyPort;
+    }
+
+    public void setProxyPort(String proxyPort) {
+        this.proxyPort = proxyPort;
+    }
     public String getRequestURL() {
         return requestURL;
     }
@@ -81,6 +98,8 @@ public class RequestContext {
                 "requestURL='" + requestURL + '\'' +
                 ", RequestMethod='" + RequestMethod + '\'' +
                 ", Charset='" + Charset + '\'' +
+                ", proxyAddr='" + proxyAddr + '\'' +
+                ", proxyPort='" + proxyPort + '\'' +
                 ", isUpload=" + isUpload +
                 ", isClear=" + isClear +
                 ", extraHeaders=" + extraHeaders +
