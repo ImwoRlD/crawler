@@ -6,6 +6,7 @@ public class RequestContext {
     private String requestURL;
     private String RequestMethod;
     private String Charset;
+    private String responseCharset;
     private String proxyAddr;
     private String proxyPort;
     private boolean isUpload;
@@ -13,6 +14,13 @@ public class RequestContext {
     private Map<String,String> extraHeaders;
     private Map<String,String> queryParam;
     private Map<String,String> queryForm;
+    public String getResponseCharset() {
+        return responseCharset;
+    }
+
+    public void setResponseCharset(String responseCharset) {
+        this.responseCharset = responseCharset;
+    }
     public String getProxyAddr() {
         return proxyAddr;
     }

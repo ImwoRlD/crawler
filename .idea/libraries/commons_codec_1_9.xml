@@ -11,6 +11,15 @@
       <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.3 2/lib/httpmime-4.5.3.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.3 2/lib/jna-4.1.0.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/httpcomponents-client-4.5.3 2/lib/jna-platform-4.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../httpclient-4.5所需jar包/commons-codec-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../httpclient-4.5所需jar包/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../httpclient-4.5所需jar包/fluent-hc-4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../httpclient-4.5所需jar包/httpclient-4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../httpclient-4.5所需jar包/httpclient-cache-4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../httpclient-4.5所需jar包/httpclient-win-4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../httpclient-4.5所需jar包/httpcore-4.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../httpclient-4.5所需jar包/httpmime-4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../httpclient-4.5所需jar包/jna-4.1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
