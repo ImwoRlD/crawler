@@ -1,6 +1,7 @@
 package HttpRequest;
 
 
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 public class HttpResponse {
@@ -9,6 +10,15 @@ public class HttpResponse {
     private Map<String,String> headers;
     private byte[] bin;
     private String imageAddres;
+    public String string(){
+        String str;
+        try {
+            str=new String(bin,charset);
+        }catch (UnsupportedEncodingException e){
+            str="不支持的编码类型";
+        }
+        return str;
+    }
 
     public int getCode() {
         return code;
