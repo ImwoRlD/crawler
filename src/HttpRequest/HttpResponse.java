@@ -12,6 +12,9 @@ public class HttpResponse {
     private String imageAddres;
     public String string(){
         String str;
+        if (charset==null){
+            charset="utf-8";
+        }
         try {
             str=new String(bin,charset);
         }catch (UnsupportedEncodingException e){

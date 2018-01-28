@@ -1,19 +1,71 @@
 package HttpRequest;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class RequestContext {
     private String requestURL;
     private String RequestMethod;
-    private String Charset;
+    private String Charset="utf-8";
     private String responseCharset;
     private String proxyAddr;
     private String proxyPort;
+    private String uuid;
     private boolean isUpload;
     private boolean isClear;
     private Map<String,String> extraHeaders;
     private Map<String,String> queryParam;
     private Map<String,String> queryForm;
+    public Session session;
+    public RequestContext(){
+        this.uuid=UUID.randomUUID().toString();
+    }
+    public Object session(String name){
+        if (this.session==null){
+            return null;
+        }
+        return session.getMap().get("name");
+    }
+    public void session(String name,Object object){
+        if (this.session==null){
+            this.session=new Session();
+        }
+        this.session.getMap().put(name,object);
+    }
+    public RequestContext url(String url){
+        this.requestURL=url;
+        return this;
+    }
+    public RequestContext GET(){
+        this.RequestMethod="GET";
+        return this;
+    }
+    public RequestContext POST(){
+        this.RequestMethod="POST";
+        return this;
+    }
+    public RequestContext header(String name,String value){
+        if (this.extraHeaders==null){
+            this.extraHeaders=new HashMap<>();
+        }
+        this.extraHeaders.put(name,value);
+        return this;
+    }
+    public RequestContext query(String name,String value){
+        if (this.queryParam==null){
+            this.queryParam=new HashMap<>();
+        }
+        this.queryParam.put(name,value);
+        return this;
+    }
+    public RequestContext form(String name,String value){
+        if (this.getQueryForm()==null){
+            this.queryForm=new HashMap<>();
+        }
+        this.queryForm.put(name,value);
+        return this;
+    }
     public String getResponseCharset() {
         return responseCharset;
     }
