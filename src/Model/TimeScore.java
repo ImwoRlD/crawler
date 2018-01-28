@@ -3,15 +3,17 @@ package Model;
 import java.util.List;
 
 public class TimeScore {
-    public String term;
+    public Term term;
+
+    public Float GPA;
     public List<Score> scoreList;
 
-    public String getTerm() {
-        return term;
+    public Float getGPA() {
+        return GPA;
     }
 
-    public void setTerm(String term) {
-        this.term = term;
+    public void setGPA(Float GPA) {
+        this.GPA = GPA;
     }
 
     public List<Score> getScoreList() {
@@ -22,10 +24,19 @@ public class TimeScore {
         this.scoreList = scoreList;
     }
 
+    public Term getTerm() {
+        return term;
+    }
+
+    public void setTerm(Term term) {
+        this.term = term;
+    }
+
     @Override
     public String toString() {
         return "TimeScore{" +
                 "term=" + term +
+                ", GPA=" + GPA +
                 ", scoreList=" + scoreList +
                 '}';
     }

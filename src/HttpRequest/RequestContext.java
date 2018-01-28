@@ -18,6 +18,15 @@ public class RequestContext {
     private Map<String,String> queryParam;
     private Map<String,String> queryForm;
     public Session session;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public RequestContext(){
         this.uuid=UUID.randomUUID().toString();
     }

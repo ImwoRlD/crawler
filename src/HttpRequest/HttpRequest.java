@@ -1,5 +1,6 @@
 package HttpRequest;
 
+import Uploader.ImageUploader;
 import org.apache.http.Header;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
@@ -61,6 +62,9 @@ public class HttpRequest {
             httpResponse.setCharset(requestContext.getResponseCharset());
             httpResponse.setCode(response.getStatusLine().getStatusCode());
             httpResponse.setBin(EntityUtils.toByteArray(response.getEntity()));
+            if (requestContext.isUpload()){
+                ImageUploader.upload(httpResponse.getBin(),requestContext.getUuid());
+            }
             httpResponse.setHeaders(new HashMap<>());
             for (Header header:response.getAllHeaders()){
                 httpResponse.getHeaders().put(header.getName(),header.getValue());

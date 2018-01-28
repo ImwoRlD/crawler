@@ -10,11 +10,9 @@ public class ImageUploader {
             os.write(data);
         }catch (FileNotFoundException e){
             e.printStackTrace();
-            return null;
         }catch (IOException e){
             e.printStackTrace();
-            return null;
         }
-        return "ok";
+        return "F:\\captcha\\"+uuid+".jpeg";
     }
 }
